@@ -1,10 +1,12 @@
-# [Download Bruno](https://www.usebruno.com/downloads)
+# Bruno
 
 ## Installation
 
-Bruno is available as binary download [on website](https://www.usebruno.com/downloads) for Mac, Windows and Linux.
+Bruno is a Fast and Git-Friendly Opensource API client, aimed at revolutionizing the status quo represented by Postman, Insomnia and similar tools out there.
 
-You can also install Bruno via package managers like Homebrew, Chocolatey, Scoop, Snap, Flatpak and Apt.
+- [Download Bruno](https://www.usebruno.com/downloads)
+- [Use Bruno In Details](https://github.com/Automation-Test-Starter/Bruno-API-Test-Starter/blob/main/README.md)
+
 
 ## How to use
 Open Bruno
@@ -12,7 +14,5 @@ Open Bruno
 - Select folder {user-home}/bruno-api
 
 Note
-- regurlarly update by command line: git pull
-- if you have any changes, please remember commit your changes on git
-
-## [Use Bruno In Details](https://github.com/Automation-Test-Starter/Bruno-API-Test-Starter/blob/main/README.md)
+- Update regularly using command line: `git pull`
+- If you have any changes, remember to commit your changes on git
