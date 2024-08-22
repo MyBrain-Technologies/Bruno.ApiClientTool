@@ -1,0 +1,19 @@
+meta {
+  name: -validity
+  type: http
+  seq: 25
+}
+
+get {
+  url: {{bw_url}}/validity?os=android&version=45
+  body: none
+  auth: none
+}
+
+params:query {
+  os: android
+  version: 45
+  ~version: 1.1.0
+  ~os: pc
+  ~version: 0.0.0
+}

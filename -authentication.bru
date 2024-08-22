@@ -1,0 +1,39 @@
+meta {
+  name: -authentication
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{bw_url}}/authentication
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+      "header": {
+          "version": "1.0.0",
+          "objects": 1,
+          "limit": 1,
+          "offset": 0,
+          "total": 1
+      },
+      "data": [
+          {
+              "strategy": "local",
+              "email": "micheal.bay120fhfhrh3@gmail.com",
+              "password": "12345678a@A"
+          }
+      ]
+  }
+}
+
+tests {
+  //var jsonData = res.getBody();
+  //bru.setEnvVar("auth", jsonData["data"][0].accessToken);
+}

@@ -1,0 +1,28 @@
+meta {
+  name: -ingest-legacy -TODO-
+  type: http
+  seq: 8
+}
+
+post {
+  url: {{bw_url}}/ingest-legacy
+  body: multipartForm
+  auth: bearer
+}
+
+headers {
+  ~Content-Type: application/x-www-form-urlencoded
+  ~Content-Length: 1641250
+  ~Content-Length: 1641247
+  ~Content-Encoding: gzip
+}
+
+auth:bearer {
+  token: {{auth}}
+}
+
+body:multipart-form {
+  eeg: @file(/C:/Users/Ludo/Downloads/2021-08-23_18-05-22.920-Acquisier-melo_2120200001-2170.json)
+  sessionElementIndex: 1
+  test: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+}

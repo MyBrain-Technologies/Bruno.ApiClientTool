@@ -1,0 +1,22 @@
+meta {
+  name: -survey-list
+  type: http
+  seq: 21
+}
+
+get {
+  url: {{bw_url}}/survey?survey_identifier=eva-emotion&lang_code=en-EN
+  body: none
+  auth: bearer
+}
+
+params:query {
+  survey_identifier: eva-emotion
+  lang_code: en-EN
+  ~survey_mode: pre-session
+  ~company: pmi
+}
+
+auth:bearer {
+  token: {{auth}}
+}

@@ -1,0 +1,15 @@
+meta {
+  name: -melomind-analysis-my-program-progress
+  type: http
+  seq: 29
+}
+
+get {
+  url: {{bw_url}}/melomind-analysis/my-program/progress
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{auth}}
+}

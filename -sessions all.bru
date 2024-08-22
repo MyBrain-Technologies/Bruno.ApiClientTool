@@ -1,0 +1,22 @@
+meta {
+  name: -sessions all
+  type: http
+  seq: 10
+}
+
+get {
+  url: {{bw_url}}/sessions?_sorted_by=startedAt&_limit=2&_skip=1
+  body: none
+  auth: bearer
+}
+
+params:query {
+  _sorted_by: startedAt
+  _limit: 2
+  _skip: 1
+  ~_sort_order: 1
+}
+
+auth:bearer {
+  token: {{auth}}
+}

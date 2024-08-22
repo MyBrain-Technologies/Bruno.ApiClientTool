@@ -1,0 +1,26 @@
+meta {
+  name: -survey-results
+  type: http
+  seq: 24
+}
+
+get {
+  url: {{bw_url}}/survey-results?stype=etat&mode=program&_sorted_by=completedAt&_sort_order=-1
+  body: none
+  auth: bearer
+}
+
+params:query {
+  stype: etat
+  mode: program
+  _sorted_by: completedAt
+  _sort_order: -1
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {{auth}}
+}

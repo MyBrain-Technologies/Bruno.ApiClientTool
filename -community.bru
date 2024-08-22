@@ -1,0 +1,19 @@
+meta {
+  name: -community
+  type: http
+  seq: 27
+}
+
+get {
+  url: {{bw_url}}/community?last_session_idx=3
+  body: none
+  auth: bearer
+}
+
+params:query {
+  last_session_idx: 3
+}
+
+auth:bearer {
+  token: {{auth}}
+}

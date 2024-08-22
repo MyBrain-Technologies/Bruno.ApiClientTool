@@ -1,0 +1,15 @@
+meta {
+  name: -latest-tips
+  type: http
+  seq: 31
+}
+
+get {
+  url: {{bw_url}}/latest-tips
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{auth}}
+}

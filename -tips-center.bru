@@ -1,0 +1,15 @@
+meta {
+  name: -tips-center
+  type: http
+  seq: 30
+}
+
+get {
+  url: {{bw_url}}/tips-center
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{auth}}
+}

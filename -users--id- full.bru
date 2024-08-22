@@ -1,0 +1,52 @@
+meta {
+  name: -users--id- full
+  type: http
+  seq: 7
+}
+
+patch {
+  url: {{bw_url}}/users/{{user_id}}
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {{auth}}
+}
+
+body:json {
+  {
+      "header": {
+          "version": "1.0.0",
+          "objects": 1,
+          "limit": 1,
+          "offset": 0,
+          "total": 1
+      },
+      "data": [
+          {
+              "id": "",
+              "schemaName": "User_Stem",
+              "profile": {
+                  "username": "morouche mehdi",
+                  "age": 29,
+                  "city": "",
+                  "country": "",
+                  "gender": "Male",
+                  "job": ""
+              },
+              "settings": {
+                  "language": "fr",
+                  "soundEnabled": true,
+                  "voiceEnabled": true,
+                  "hasAcceptedContribution": true
+              }
+          }
+      ]
+  }
+  
+}

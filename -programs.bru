@@ -1,0 +1,473 @@
+meta {
+  name: -programs
+  type: http
+  seq: 19
+}
+
+post {
+  url: {{bw_url}}/programs
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {{auth}}
+}
+
+body:json {
+  {
+    "header": {
+      "version": "string",
+      "objects": 1000000,
+      "limit": 1000000,
+      "offset": 1000000,
+      "total": 1000000,
+      "versionMobile": "string"
+    },
+    "data": [
+        {
+    "name": [
+      {
+        "langCode": "fr-FR",
+        "text": "Melomind Program Until Phase 2"
+      }
+    ],
+    "description": [
+      {
+        "langCode": "fr-FR",
+        "text": "Description of Melomind Program until Phase 2 (excluded)"
+      }
+    ],
+    "sections": [
+      [
+        {
+          "name": [
+            {
+              "langCode": "fr-FR",
+              "text": "Discovery Session 1"
+            }
+          ],
+          "elements": [
+            {
+              "elementType": "survey",
+              "surveyParameters": {
+                "surveyIdentifier": "stai-trait",
+                "surveyMode": "pre-session"
+              }
+            },
+            {
+              "elementType": "survey",
+              "surveyParameters": {
+                "surveyIdentifier": "eva-stress",
+                "surveyMode": "pre-session"
+              }
+            },
+            {
+              "elementType": "restingState",
+              "restingStateParameters": {
+                "mode": "eyes-closed",
+                "duration": 0
+              }
+            },
+            {
+              "elementType": "acquisition",
+              "acquisitionParameters": {
+                "duration": 0
+              }
+            },
+            {
+              "elementType": "survey",
+              "surveyParameters": {
+                "surveyIdentifier": "eva-stress",
+                "surveyMode": "post-session"
+              }
+            }
+          ]
+        },
+        {
+          "name": [
+            {
+              "langCode": "fr-FR",
+              "text": "Observation Session 1"
+            }
+          ],
+          "elements": [
+            {
+              "elementType": "survey",
+              "surveyParameters": {
+                "surveyIdentifier": "eva-stress",
+                "surveyMode": "pre-session"
+              }
+            },
+            {
+              "elementType": "restingState",
+              "restingStateParameters": {
+                "mode": "eyes-closed",
+                "duration": 0
+              }
+            },
+            {
+              "elementType": "acquisition",
+              "acquisitionParameters": {
+                "duration": 0
+              }
+            },
+            {
+              "elementType": "survey",
+              "surveyParameters": {
+                "surveyIdentifier": "eva-stress",
+                "surveyMode": "post-session"
+              }
+            }
+          ]
+        },
+        {
+          "name": [
+            {
+              "langCode": "fr-FR",
+              "text": "Observation Session 2"
+            }
+          ],
+          "elements": [
+            {
+              "elementType": "survey",
+              "surveyParameters": {
+                "surveyIdentifier": "eva-stress",
+                "surveyMode": "pre-session"
+              }
+            },
+            {
+              "elementType": "restingState",
+              "restingStateParameters": {
+                "mode": "eyes-closed",
+                "duration": 0
+              }
+            },
+            {
+              "elementType": "acquisition",
+              "acquisitionParameters": {
+                "duration": 0
+              }
+            },
+            {
+              "elementType": "survey",
+              "surveyParameters": {
+                "surveyIdentifier": "eva-stress",
+                "surveyMode": "post-session"
+              }
+            }
+          ]
+        },
+        {
+          "name": [
+            {
+              "langCode": "fr-FR",
+              "text": "Observation Session 3"
+            }
+          ],
+          "elements": [
+            {
+              "elementType": "survey",
+              "surveyParameters": {
+                "surveyIdentifier": "eva-stress",
+                "surveyMode": "pre-session"
+              }
+            },
+            {
+              "elementType": "restingState",
+              "restingStateParameters": {
+                "mode": "eyes-closed",
+                "duration": 0
+              }
+            },
+            {
+              "elementType": "acquisition",
+              "acquisitionParameters": {
+                "duration": 0
+              }
+            },
+            {
+              "elementType": "survey",
+              "surveyParameters": {
+                "surveyIdentifier": "eva-stress",
+                "surveyMode": "post-session"
+              }
+            }
+          ]
+        },
+        {
+          "name": [
+            {
+              "langCode": "fr-FR",
+              "text": "Observation Session 4"
+            }
+          ],
+          "elements": [
+            {
+              "elementType": "survey",
+              "surveyParameters": {
+                "surveyIdentifier": "eva-stress",
+                "surveyMode": "pre-session"
+              }
+            },
+            {
+              "elementType": "restingState",
+              "restingStateParameters": {
+                "mode": "eyes-closed",
+                "duration": 0
+              }
+            },
+            {
+              "elementType": "acquisition",
+              "acquisitionParameters": {
+                "duration": 0
+              }
+            },
+            {
+              "elementType": "survey",
+              "surveyParameters": {
+                "surveyIdentifier": "eva-stress",
+                "surveyMode": "post-session"
+              }
+            }
+          ]
+        },
+        {
+          "name": [
+            {
+              "langCode": "fr-FR",
+              "text": "Observation Session 5"
+            }
+          ],
+          "elements": [
+            {
+              "elementType": "survey",
+              "surveyParameters": {
+                "surveyIdentifier": "eva-stress",
+                "surveyMode": "pre-session"
+              }
+            },
+            {
+              "elementType": "restingState",
+              "restingStateParameters": {
+                "mode": "eyes-closed",
+                "duration": 0
+              }
+            },
+            {
+              "elementType": "acquisition",
+              "acquisitionParameters": {
+                "duration": 0
+              }
+            },
+            {
+              "elementType": "survey",
+              "surveyParameters": {
+                "surveyIdentifier": "eva-stress",
+                "surveyMode": "post-session"
+              }
+            }
+          ]
+        },
+        {
+          "name": [
+            {
+              "langCode": "fr-FR",
+              "text": "Observation Session 6"
+            }
+          ],
+          "elements": [
+            {
+              "elementType": "survey",
+              "surveyParameters": {
+                "surveyIdentifier": "eva-stress",
+                "surveyMode": "pre-session"
+              }
+            },
+            {
+              "elementType": "restingState",
+              "restingStateParameters": {
+                "mode": "eyes-closed",
+                "duration": 0
+              }
+            },
+            {
+              "elementType": "acquisition",
+              "acquisitionParameters": {
+                "duration": 0
+              }
+            },
+            {
+              "elementType": "survey",
+              "surveyParameters": {
+                "surveyIdentifier": "eva-stress",
+                "surveyMode": "post-session"
+              }
+            }
+          ]
+        },
+        {
+          "name": [
+            {
+              "langCode": "fr-FR",
+              "text": "Observation Session 7"
+            }
+          ],
+          "elements": [
+            {
+              "elementType": "survey",
+              "surveyParameters": {
+                "surveyIdentifier": "eva-stress",
+                "surveyMode": "pre-session"
+              }
+            },
+            {
+              "elementType": "restingState",
+              "restingStateParameters": {
+                "mode": "eyes-closed",
+                "duration": 0
+              }
+            },
+            {
+              "elementType": "acquisition",
+              "acquisitionParameters": {
+                "duration": 0
+              }
+            },
+            {
+              "elementType": "survey",
+              "surveyParameters": {
+                "surveyIdentifier": "eva-stress",
+                "surveyMode": "post-session"
+              }
+            }
+          ]
+        },
+        {
+          "name": [
+            {
+              "langCode": "fr-FR",
+              "text": "Observation Session 8"
+            }
+          ],
+          "elements": [
+            {
+              "elementType": "survey",
+              "surveyParameters": {
+                "surveyIdentifier": "eva-stress",
+                "surveyMode": "pre-session"
+              }
+            },
+            {
+              "elementType": "restingState",
+              "restingStateParameters": {
+                "mode": "eyes-closed",
+                "duration": 0
+              }
+            },
+            {
+              "elementType": "acquisition",
+              "acquisitionParameters": {
+                "duration": 0
+              }
+            },
+            {
+              "elementType": "survey",
+              "surveyParameters": {
+                "surveyIdentifier": "eva-stress",
+                "surveyMode": "post-session"
+              }
+            }
+          ]
+        },
+        {
+          "name": [
+            {
+              "langCode": "fr-FR",
+              "text": "Observation Session 9"
+            }
+          ],
+          "elements": [
+            {
+              "elementType": "survey",
+              "surveyParameters": {
+                "surveyIdentifier": "eva-stress",
+                "surveyMode": "pre-session"
+              }
+            },
+            {
+              "elementType": "restingState",
+              "restingStateParameters": {
+                "mode": "eyes-closed",
+                "duration": 0
+              }
+            },
+            {
+              "elementType": "acquisition",
+              "acquisitionParameters": {
+                "duration": 0
+              }
+            },
+            {
+              "elementType": "survey",
+              "surveyParameters": {
+                "surveyIdentifier": "eva-stress",
+                "surveyMode": "post-session"
+              }
+            }
+          ]
+        },
+        {
+          "name": [
+            {
+              "langCode": "fr-FR",
+              "text": "Observation Session 10"
+            }
+          ],
+          "elements": [
+            {
+              "elementType": "survey",
+              "surveyParameters": {
+                "surveyIdentifier": "stai-trait",
+                "surveyMode": "pre-session"
+              }
+            },
+            {
+              "elementType": "survey",
+              "surveyParameters": {
+                "surveyIdentifier": "eva-stress",
+                "surveyMode": "pre-session"
+              }
+            },
+            {
+              "elementType": "restingState",
+              "restingStateParameters": {
+                "mode": "eyes-closed",
+                "duration": 0
+              }
+            },
+            {
+              "elementType": "acquisition",
+              "acquisitionParameters": {
+                "duration": 0
+              }
+            },
+            {
+              "elementType": "survey",
+              "surveyParameters": {
+                "surveyIdentifier": "eva-stress",
+                "surveyMode": "post-session"
+              }
+            }
+          ]
+        }
+      ]
+    ]
+  }
+    ]
+  }
+}

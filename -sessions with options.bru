@@ -1,0 +1,22 @@
+meta {
+  name: -sessions with options
+  type: http
+  seq: 11
+}
+
+get {
+  url: {{bw_url}}/sessions?_skip=1&_limit=1
+  body: none
+  auth: bearer
+}
+
+params:query {
+  _skip: 1
+  _limit: 1
+  ~completed: true
+  ~aborted: false
+}
+
+auth:bearer {
+  token: {{auth}}
+}

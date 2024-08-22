@@ -1,0 +1,43 @@
+meta {
+  name: -runtime-events
+  type: http
+  seq: 9
+}
+
+post {
+  url: {{bw_url}}/runtime-events
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {{auth}}
+}
+
+body:json {
+  {
+      "header": {
+          "version": "1.0.0",
+          "objects": 1,
+          "limit": 1,
+          "offset": 0,
+          "total": 1
+      },
+      "data": [
+          {
+              "id": "",
+              "schemaName": "Runtime_Event",
+              "timestamp": 1510845478,
+              "action": "JOURNEY_FRAME_ORDER",
+              "eventData": {},
+              "objectId": "1234-fjsi4-42dz4-9385d",
+              "objectType": "Headset\nTablet\nSession"
+          }
+      ]
+  }
+  
+}

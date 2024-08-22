@@ -1,0 +1,19 @@
+meta {
+  name: -sessions-history
+  type: http
+  seq: 13
+}
+
+get {
+  url: {{bw_url}}/sessions-history
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~_sort_order: 1
+}
+
+auth:bearer {
+  token: {{auth}}
+}

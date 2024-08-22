@@ -1,0 +1,39 @@
+meta {
+  name: -users
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{bw_url}}/users
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {{auth}}
+}
+
+body:json {
+  {
+      "header": {
+          "version": "1.0.0",
+          "objects": 1,
+          "limit": 1,
+          "offset": 0,
+          "total": 1
+      },
+      "data": [
+          {
+              "id": "",
+              "schemaName": "User_Seed",
+              "oauth_id": "auth0|5e6a5adc6133a20c7945c1d4",
+              "origin": "mybrain"
+          }
+      ]
+  }
+}
