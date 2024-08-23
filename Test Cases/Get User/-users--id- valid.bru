@@ -1,0 +1,19 @@
+meta {
+  name: -users--id- valid
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{bw_url}}/users/23
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{auth}}
+}
+
+tests {
+  var jsonData = res.getBody();
+}

@@ -1,0 +1,19 @@
+meta {
+  name: -users--id- invalid input
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{bw_url}}/users/invalid_id
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{auth}}
+}
+
+tests {
+  var jsonData = res.getBody();
+}

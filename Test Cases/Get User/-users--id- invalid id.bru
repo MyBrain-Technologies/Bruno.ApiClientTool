@@ -1,0 +1,19 @@
+meta {
+  name: -users--id- invalid id
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{bw_url}}/users/9999999
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{auth}}
+}
+
+tests {
+  var jsonData = res.getBody();
+}
