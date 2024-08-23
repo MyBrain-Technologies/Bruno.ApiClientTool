@@ -1,11 +1,11 @@
 meta {
-  name: -users--id- invalid input
+  name: -users--id- not exist
   type: http
-  seq: 1
+  seq: 4
 }
 
 get {
-  url: {{bw_url}}/users/a1sa
+  url: {{bw_url}}/users/12
   body: none
   auth: bearer
 }
@@ -19,7 +19,7 @@ tests {
     expect(res.getStatus()).to.equal(500);
   });
   
-  test("invalid input", function() {
-      expect(res.body.error).to.contains('invalid');
+  test("user does not exist", function() {
+      expect(res.body.error).to.contains('user does not exist');
   });
 }

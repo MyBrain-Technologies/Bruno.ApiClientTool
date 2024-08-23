@@ -1,11 +1,11 @@
 meta {
-  name: -users--id- full
+  name: -users--id- minimal no record found
   type: http
-  seq: 6
+  seq: 1
 }
 
 patch {
-  url: {{bw_url}}/users/{{user_id}}
+  url: {{bw_url}}/users/55055
   body: json
   auth: bearer
 }
@@ -31,16 +31,8 @@ body:json {
           {
               "id": "",
               "schemaName": "User_Stem",
-              "profile": {
-                  "username": "morouche mehdi",
-                  "age": 29,
-                  "city": "",
-                  "country": "",
-                  "gender": "Male",
-                  "job": ""
-              },
               "settings": {
-                  "language": "fr",
+                  "language": "fr-FR",
                   "soundEnabled": true,
                   "voiceEnabled": true,
                   "hasAcceptedContribution": true
@@ -49,4 +41,14 @@ body:json {
       ]
   }
   
+}
+
+tests {
+  test("status code is 404", function() {
+    expect(res.getStatus()).to.equal(404);
+  });
+  
+  test("no record found", function() {
+      expect(res.body.error).to.contains('No record');
+  });
 }

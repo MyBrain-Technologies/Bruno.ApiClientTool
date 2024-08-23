@@ -1,17 +1,13 @@
 meta {
   name: -community
   type: http
-  seq: 24
+  seq: 23
 }
 
 get {
-  url: {{bw_url}}/community?last_session_idx=3
+  url: {{bw_url}}/community
   body: none
   auth: bearer
-}
-
-params:query {
-  last_session_idx: 3
 }
 
 auth:bearer {

@@ -1,0 +1,25 @@
+meta {
+  name: -users--id- no input
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{bw_url}}/users
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{auth}}
+}
+
+tests {
+  test("status code is 405", function() {
+    expect(res.getStatus()).to.equal(405);
+  });
+  
+  test("can not call 'find'", function() {
+      expect(res.body.error).to.contains('can not call');
+  });
+}

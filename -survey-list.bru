@@ -1,11 +1,11 @@
 meta {
   name: -survey-list
   type: http
-  seq: 19
+  seq: 18
 }
 
 get {
-  url: {{bw_url}}/survey?survey_identifier=eva-emotion&lang_code=en-EN
+  url: {{bw_url}}/survey?survey_identifier=eva-emotion&lang_code=en-EN&survey_mode=pre-session
   body: none
   auth: bearer
 }
@@ -13,7 +13,7 @@ get {
 params:query {
   survey_identifier: eva-emotion
   lang_code: en-EN
-  ~survey_mode: pre-session
+  survey_mode: pre-session
   ~company: pmi
 }
 

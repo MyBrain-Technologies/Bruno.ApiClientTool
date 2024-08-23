@@ -1,11 +1,11 @@
 meta {
-  name: -users--id- full
+  name: -users--id- full no record
   type: http
-  seq: 6
+  seq: 3
 }
 
 patch {
-  url: {{bw_url}}/users/{{user_id}}
+  url: {{bw_url}}/users/55505
   body: json
   auth: bearer
 }
@@ -49,4 +49,14 @@ body:json {
       ]
   }
   
+}
+
+tests {
+  test("status code is 404", function() {
+    expect(res.getStatus()).to.equal(404);
+  });
+  
+  test("no record found", function() {
+      expect(res.body.error).to.contains('No record');
+  });
 }

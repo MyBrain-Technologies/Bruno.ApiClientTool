@@ -1,0 +1,29 @@
+meta {
+  name: -sessions--id- no permission
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{bw_url}}/sessions/1
+  body: none
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {{auth}}
+}
+
+tests {
+  test("status code is 403", function() {
+    expect(res.getStatus()).to.equal(403);
+  });
+  
+  test("no permission", function() {
+      expect(res.body.error).to.contains('permission')
+  });
+}

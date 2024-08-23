@@ -1,20 +1,20 @@
 meta {
   name: -survey-results
   type: http
-  seq: 21
+  seq: 20
 }
 
 get {
-  url: {{bw_url}}/survey-results?stype=etat&mode=program&_sorted_by=completedAt&_sort_order=-1
+  url: {{bw_url}}/survey-results?_sorted_by=completedAt&_sort_order=-1
   body: none
   auth: bearer
 }
 
 params:query {
-  stype: etat
-  mode: program
   _sorted_by: completedAt
   _sort_order: -1
+  ~stype: etat
+  ~mode: program
 }
 
 headers {

@@ -1,0 +1,25 @@
+meta {
+  name: -users--id- no record
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{bw_url}}/users/11111
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{auth}}
+}
+
+tests {
+  test("status code is 404", function() {
+    expect(res.getStatus()).to.equal(404);
+  });
+  
+  test("no record found", function() {
+      expect(res.body.error).to.contains('No record');
+  });
+}
