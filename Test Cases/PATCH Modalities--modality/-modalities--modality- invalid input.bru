@@ -5,7 +5,7 @@ meta {
 }
 
 patch {
-  url: {{bw_url}}/modalities/55
+  url: {{bw_url}}/modalities/55sc
   body: json
   auth: bearer
 }
@@ -34,12 +34,11 @@ body:json {
 }
 
 tests {
-  test("status code is 200", function() {
-    expect(res.getStatus()).to.equal(200);
+  test("status code is 500", function() {
+    expect(res.getStatus()).to.equal(500);
   });
   
-  test("receive id", function() {
-    const jsonData = res.getBody();
-    expect(jsonData.data[0]).to.have.include({"id": "55"});
+  test("invalid input", function() {
+    expect(res.body.error).to.contains('invalid input');
   });
 }

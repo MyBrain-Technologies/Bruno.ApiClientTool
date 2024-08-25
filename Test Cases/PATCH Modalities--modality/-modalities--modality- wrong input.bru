@@ -5,7 +5,7 @@ meta {
 }
 
 patch {
-  url: {{bw_url}}/modalities/55sc
+  url: {{bw_url}}/modalities/5056
   body: json
   auth: bearer
 }
@@ -34,11 +34,11 @@ body:json {
 }
 
 tests {
-  test("status code is 500", function() {
-    expect(res.getStatus()).to.equal(500);
+  test("status code is 404", function() {
+    expect(res.getStatus()).to.equal(404);
   });
   
-  test("invalid input", function() {
-    expect(res.body.error).to.contains('invalid input');
+  test("no record found", function() {
+      expect(res.body.error).to.contains('No record');
   });
 }
