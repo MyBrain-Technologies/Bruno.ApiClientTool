@@ -1,0 +1,30 @@
+meta {
+  name: -community valid
+  type: http
+  seq: 34
+}
+
+get {
+  url: {{bw_url}}/community?last_session_idx=3
+  body: none
+  auth: bearer
+}
+
+params:query {
+  last_session_idx: 3
+}
+
+auth:bearer {
+  token: {{auth}}
+}
+
+tests {
+  test("status code is 200", function() {
+    expect(res.getStatus()).to.equal(200);
+  });
+  
+  test("success", function() {
+    const jsonData = res.getBody();
+    expect(jsonData.data).to.have.lengthOf(1);
+  });
+}

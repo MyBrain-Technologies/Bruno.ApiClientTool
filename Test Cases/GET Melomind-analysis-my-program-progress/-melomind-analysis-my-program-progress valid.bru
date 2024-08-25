@@ -1,0 +1,35 @@
+meta {
+  name: -melomind-analysis-my-program-progress valid
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{bw_url}}/melomind-analysis/my-program/progress
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{auth}}
+}
+
+tests {
+  test("status code is 200", function() {
+    expect(res.getStatus()).to.equal(200);
+  });
+  
+  test("success", function() {
+    const jsonData = res.getBody();
+    expect(jsonData.data).to.deep.include({
+        "completedSessions": 2,
+        "phase": -1,
+        "totalNFDuration": 0,
+        "totalDRDuration": 0,
+        "assiduity": {
+          "frequency": 0,
+          "regularity": -1
+        }
+      })
+  });
+}

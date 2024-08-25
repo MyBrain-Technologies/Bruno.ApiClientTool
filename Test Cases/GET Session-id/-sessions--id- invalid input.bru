@@ -1,0 +1,29 @@
+meta {
+  name: -sessions--id- invalid input
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{bw_url}}/sessions/1a1
+  body: none
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {{auth}}
+}
+
+tests {
+  test("status code is 500", function() {
+    expect(res.getStatus()).to.equal(500);
+  });
+  
+  test("invalid input", function() {
+    expect(res.body.error).to.have.string('invalid input')
+  });
+}

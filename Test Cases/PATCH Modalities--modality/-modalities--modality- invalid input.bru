@@ -1,0 +1,45 @@
+meta {
+  name: -modalities--modality- invalid input
+  type: http
+  seq: 2
+}
+
+patch {
+  url: {{bw_url}}/modalities/55
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{auth}}
+}
+
+body:json {
+  {
+    "header": {
+      "version": "string",
+      "objects": 0,
+      "limit": 0,
+      "offset": 0,
+      "total": 0,
+      "versionMobile": "string"
+    },
+    "data": [
+      {
+        "label": "test",
+        "metadata": {}
+      }
+    ]
+  }
+}
+
+tests {
+  test("status code is 200", function() {
+    expect(res.getStatus()).to.equal(200);
+  });
+  
+  test("receive id", function() {
+    const jsonData = res.getBody();
+    expect(jsonData.data[0]).to.have.include({"id": "55"});
+  });
+}

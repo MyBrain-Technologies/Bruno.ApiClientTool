@@ -1,0 +1,25 @@
+meta {
+  name: -modalities-raw--modality- wrong input
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{bw_url}}/modalities-raw/33333
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{auth}}
+}
+
+tests {
+  test("status code is 404", function() {
+    expect(res.getStatus()).to.equal(404);
+  });
+  
+  test("no record found", function() {
+    expect(res.body.error).to.have.string('No record found')
+  });
+}

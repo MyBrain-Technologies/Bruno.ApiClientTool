@@ -1,0 +1,30 @@
+meta {
+  name: -qrcode invalid input
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{bw_url}}/qrcode?qr=test
+  body: none
+  auth: bearer
+}
+
+params:query {
+  qr: test
+  ~headset_id: test
+}
+
+auth:bearer {
+  token: {{auth}}
+}
+
+tests {
+  test("status code is 400", function() {
+    expect(res.getStatus()).to.equal(400);
+  });
+  
+  test("invalid input", function() {
+    expect(res.body.error).to.have.string('Invalid input')
+  });
+}

@@ -1,0 +1,43 @@
+meta {
+  name: -modalities invalid input
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{bw_url}}/modalities
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{auth}}
+}
+
+body:json {
+  {
+    "header": {
+      "version": "string",
+      "objects": 0,
+      "limit": 0,
+      "offset": 0,
+      "total": 0,
+      "versionMobile": "string"
+    },
+    "data": [
+      {
+        "timestamp": 1637080083873
+      }
+    ]
+  }
+}
+
+tests {
+  test("status code is 400", function() {
+    expect(res.getStatus()).to.equal(400);
+  });
+  
+  test("invalid input", function() {
+    expect(res.body.error).to.contains('Invalid input');
+  });
+}

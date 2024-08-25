@@ -1,0 +1,25 @@
+meta {
+  name: -modalities-raw--modality- no permission
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{bw_url}}/modalities-raw/3
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{auth}}
+}
+
+tests {
+  test("status code is 403", function() {
+    expect(res.getStatus()).to.equal(403);
+  });
+  
+  test("dont have permissions", function() {
+    expect(res.body.error).to.include('do not have the permissions')
+  });
+}

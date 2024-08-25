@@ -1,11 +1,11 @@
 meta {
-  name: -users--id- full not exist
+  name: -users--id- minimal wrong input
   type: http
-  seq: 4
+  seq: 1
 }
 
 patch {
-  url: {{bw_url}}/users/5505
+  url: {{bw_url}}/users/55055
   body: json
   auth: bearer
 }
@@ -31,16 +31,8 @@ body:json {
           {
               "id": "",
               "schemaName": "User_Stem",
-              "profile": {
-                  "username": "morouche mehdi",
-                  "age": 29,
-                  "city": "",
-                  "country": "",
-                  "gender": "Male",
-                  "job": ""
-              },
               "settings": {
-                  "language": "fr",
+                  "language": "fr-FR",
                   "soundEnabled": true,
                   "voiceEnabled": true,
                   "hasAcceptedContribution": true
@@ -52,11 +44,11 @@ body:json {
 }
 
 tests {
-  test("status code is 500", function() {
-    expect(res.getStatus()).to.equal(500);
+  test("status code is 404", function() {
+    expect(res.getStatus()).to.equal(404);
   });
   
-  test("user does not exist", function() {
-      expect(res.body.error).to.contains('user does not exist');
+  test("no record found", function() {
+      expect(res.body.error).to.contains('No record');
   });
 }

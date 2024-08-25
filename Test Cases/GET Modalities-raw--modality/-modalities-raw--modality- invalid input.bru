@@ -1,0 +1,25 @@
+meta {
+  name: -modalities-raw--modality- invalid input
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{bw_url}}/modalities-raw/3as
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{auth}}
+}
+
+tests {
+  test("status code is 500", function() {
+    expect(res.getStatus()).to.equal(500);
+  });
+  
+  test("invalid input", function() {
+    expect(res.body.error).to.have.string('invalid input')
+  });
+}

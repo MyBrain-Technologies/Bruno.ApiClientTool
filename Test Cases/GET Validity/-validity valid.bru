@@ -1,0 +1,31 @@
+meta {
+  name: -validity valid
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{bw_url}}/validity?os=android&version=45
+  body: none
+  auth: none
+}
+
+params:query {
+  os: android
+  version: 45
+  ~version: 1.1.0
+  ~os: pc
+  ~version: 0.0.0
+}
+
+tests {
+  test("status code is 200", function() {
+    expect(res.getStatus()).to.equal(200);
+  });
+  
+  test("success", function() {
+    const jsonData = res.getBody();
+    expect(jsonData.data).to.deep.include({"currentVersion": "49", "currentAppId": "mybraintech.com.melomind", "statusCode": 0
+      })
+  });
+}

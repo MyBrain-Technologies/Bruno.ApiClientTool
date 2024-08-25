@@ -1,0 +1,37 @@
+meta {
+  name: -survey-results invalid
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{bw_url}}/survey-results?_sorted_by=completedAt&_sort_order=-1
+  body: none
+  auth: bearer
+}
+
+params:query {
+  _sorted_by: completedAt
+  _sort_order: -1
+  ~stype: etat
+  ~mode: program
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {{auth}}
+}
+
+tests {
+  test("status code is 200", function() {
+    expect(res.getStatus()).to.equal(200);
+  });
+  
+  test("success", function() {
+    const jsonData = res.getBody();
+    expect(jsonData.data).to.have.lengthOf(6);
+  });
+}

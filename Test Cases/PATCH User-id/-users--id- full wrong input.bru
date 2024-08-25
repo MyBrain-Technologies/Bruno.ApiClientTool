@@ -1,11 +1,11 @@
 meta {
-  name: -users--id- minimal no record found
+  name: -users--id- full wrong input
   type: http
-  seq: 1
+  seq: 4
 }
 
 patch {
-  url: {{bw_url}}/users/55055
+  url: {{bw_url}}/users/55505
   body: json
   auth: bearer
 }
@@ -31,8 +31,16 @@ body:json {
           {
               "id": "",
               "schemaName": "User_Stem",
+              "profile": {
+                  "username": "morouche mehdi",
+                  "age": 29,
+                  "city": "",
+                  "country": "",
+                  "gender": "Male",
+                  "job": ""
+              },
               "settings": {
-                  "language": "fr-FR",
+                  "language": "fr",
                   "soundEnabled": true,
                   "voiceEnabled": true,
                   "hasAcceptedContribution": true

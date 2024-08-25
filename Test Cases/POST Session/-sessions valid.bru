@@ -1,0 +1,54 @@
+meta {
+  name: -sessions valid
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{bw_url}}/sessions
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {{auth}}
+}
+
+body:json {
+  {
+      "header": {
+          "version": "1.0.0",
+          "objects": 1,
+          "offset": 0,
+          "total": 1,
+          "limit": 1
+      },
+      "data": [
+          {
+              "duration": 60,
+              "exerciseType": "JOURNEY",
+              "goal": 0,
+              "programId": 122,
+              "programSessionIndex": 0,
+              "schemaName": "Session_Seed",
+              "sessionType": 3,
+              "startedAt": 1637080083873
+          }
+      ]
+  }
+}
+
+tests {
+  test("status code is 201", function() {
+    expect(res.getStatus()).to.equal(201);
+  });
+  
+  test("success", function() {
+    const jsonData = res.getBody();
+    expect(jsonData.data[0]).to.have.all.key('id', 'recordId');
+  });
+}

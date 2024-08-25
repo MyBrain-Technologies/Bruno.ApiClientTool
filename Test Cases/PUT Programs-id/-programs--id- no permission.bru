@@ -1,0 +1,79 @@
+meta {
+  name: -programs--id- no permission
+  type: http
+  seq: 1
+}
+
+put {
+  url: {{bw_url}}/programs/2
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {{auth}}
+}
+
+body:json {
+  {
+      "header": {
+          "version": "1.0.0",
+          "objects": 1,
+          "limit": 1,
+          "offset": 0,
+          "total": 1
+      },
+      "data": [
+          {
+              "schemaName": "Program_Seed",
+              "name": [
+                  {
+                      "langCode": "en-EN",
+                      "text": "Simple Program"
+                  },
+                  {
+                      "langCode": "fr-FR",
+                      "text": "Un programme simple"
+                  }
+              ],
+              "description": [
+                  {
+                      "langCode": "en-EN",
+                      "text": "A simple acquisition program, containing a single acquisition session"
+                  },
+                  {
+                      "langCode": "fr-FR",
+                      "text": "Un programme d'acquisition simple, qui contient une unique session d'acquisition"
+                  }
+              ],
+              "sections": [
+                  [
+                      {
+                          "name": [
+                              {
+                                  "langCode": "en-EN",
+                                  "text": "Acquisition"
+                              },
+                              {
+                                  "langCode": "fr-FR",
+                                  "text": "Acquisition"
+                              }
+                          ],
+                          "repeat": false,
+                          "repeatTime": 1,
+                          "elements": [
+                              {
+                                  "elementType": "acquisition"
+                              }
+                          ]
+                      }
+                  ]
+              ]
+          }
+      ]
+  }
+}

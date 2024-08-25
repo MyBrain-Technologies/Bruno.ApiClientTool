@@ -1,0 +1,65 @@
+meta {
+  name: -sessions--id- invalid input
+  type: http
+  seq: 1
+}
+
+patch {
+  url: {{bw_url}}/sessions/1
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {{auth}}
+}
+
+body:json {
+  {
+      "header": {
+          "limit": 20,
+          "version": "melomind_v1.3.3",
+          "versionMobile": "1.4.12",
+          "offset": 0,
+          "total": 1,
+          "objects": 1
+      },
+      "data": [
+          {
+              "guidedModePeriods": [],
+              "eegKpis": {
+                  "relaxIndex": [],
+                  "averageAreaAboveThreshold": 0,
+                  "performance": 0,
+                  "switches": 0
+              },
+              "context": {
+                  "mobileDevice": "Apple|iPhone 6|12.4.8",
+                  "recordId": "1416faa0-7c22-4084-a73c-2f6171694a89",
+                  "riAlgo": "RMS",
+                  "ownerId": "1"
+              },
+              "completed": true,
+              "events": [],
+              "abortedType": 1,
+              "id": "1",
+              "schemaName": "Session_Stem",
+              "timeline": []
+          }
+      ]
+  }
+}
+
+tests {
+  test("status code is 400", function() {
+    expect(res.getStatus()).to.equal(400);
+  });
+  
+  test("invalid input", function() {
+    expect(res.body.error).to.contains('Invalid input');
+  });
+}

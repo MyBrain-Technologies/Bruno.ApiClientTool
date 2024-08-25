@@ -1,0 +1,29 @@
+meta {
+  name: -community invalid input
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{bw_url}}/community?last_session_idx_invalid=3
+  body: none
+  auth: bearer
+}
+
+params:query {
+  last_session_idx_invalid: 3
+}
+
+auth:bearer {
+  token: {{auth}}
+}
+
+tests {
+  test("status code is 400", function() {
+    expect(res.getStatus()).to.equal(400);
+  });
+  
+  test("invalid input", function() {
+    expect(res.body.error).to.have.string('Invalid input')
+  });
+}

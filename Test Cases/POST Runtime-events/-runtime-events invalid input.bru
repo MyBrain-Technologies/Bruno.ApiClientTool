@@ -1,0 +1,52 @@
+meta {
+  name: -runtime-events invalid input
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{bw_url}}/runtime-events
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {{auth}}
+}
+
+body:json {
+  {
+      "header": {
+          "version": "1.0.0",
+          "objects": 1,
+          "limit": 1,
+          "offset": 0,
+          "total": 1
+      },
+      "data": [
+          {
+              "id": "",
+              "schemaName": "Runtime_Event",
+              "timestamp": 1510845478,
+              "action": "JOURNEY_FRAME_ORDER",
+              "eventData": {},
+              "objectId": "1234-fjsi4-42dz4-93"
+          }
+      ]
+  }
+  
+}
+
+tests {
+  test("status code is 400", function() {
+    expect(res.getStatus()).to.equal(400);
+  });
+  
+  test("invalid input", function() {
+    expect(res.body.error).to.contains('Invalid input');
+  });
+}

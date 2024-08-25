@@ -1,0 +1,29 @@
+meta {
+  name: -latest-tips valid
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{bw_url}}/latest-tips
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{auth}}
+}
+
+tests {
+  test("status code is 200", function() {
+    expect(res.getStatus()).to.equal(200);
+  });
+  
+  test("success", function() {
+    const jsonData = res.getBody();
+    expect(jsonData.data).to.deep.include({
+        "title": "The body scan",
+        "description": "Try feeling how each part of your body feels. Start with your toes and pay attention to their state. Then move to your ankles, your calves, progressively working your way up to your scalp, scanning each part of your body."
+      })
+  });
+}

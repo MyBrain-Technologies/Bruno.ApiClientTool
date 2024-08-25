@@ -1,0 +1,44 @@
+meta {
+  name: -modalities--modality- wrong input
+  type: http
+  seq: 3
+}
+
+patch {
+  url: {{bw_url}}/modalities/55sc
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{auth}}
+}
+
+body:json {
+  {
+    "header": {
+      "version": "string",
+      "objects": 0,
+      "limit": 0,
+      "offset": 0,
+      "total": 0,
+      "versionMobile": "string"
+    },
+    "data": [
+      {
+        "label": "test",
+        "metadata": {}
+      }
+    ]
+  }
+}
+
+tests {
+  test("status code is 500", function() {
+    expect(res.getStatus()).to.equal(500);
+  });
+  
+  test("invalid input", function() {
+    expect(res.body.error).to.contains('invalid input');
+  });
+}

@@ -1,0 +1,22 @@
+meta {
+  name: -health valid
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{bw_url}}/health
+  body: none
+  auth: none
+}
+
+tests {
+  test("status code is 200", function() {
+    expect(res.getStatus()).to.equal(200);
+  });
+  
+  test("success", function() {
+    const jsonData = res.getBody();
+    expect(jsonData.data).to.be.a('array');
+  });
+}

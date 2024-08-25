@@ -1,0 +1,53 @@
+meta {
+  name: -runtime-events valid
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{bw_url}}/runtime-events
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {{auth}}
+}
+
+body:json {
+  {
+      "header": {
+          "version": "1.0.0",
+          "objects": 1,
+          "limit": 1,
+          "offset": 0,
+          "total": 1
+      },
+      "data": [
+          {
+              "id": "",
+              "schemaName": "Runtime_Event",
+              "timestamp": 1510845478,
+              "action": "JOURNEY_FRAME_ORDER",
+              "eventData": {},
+              "objectId": "1234-fjsi4-42dz4-93",
+              "objectType": "Headset\nTablet\nSession"
+          }
+      ]
+  }
+}
+
+tests {
+  test("status code is 201", function() {
+    expect(res.getStatus()).to.equal(201);
+  });
+  
+  test("receive id", function() {
+    const jsonData = res.getBody();
+    expect(jsonData.data[0]).to.have.own.property('id');
+  });
+}

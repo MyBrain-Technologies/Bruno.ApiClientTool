@@ -1,0 +1,30 @@
+meta {
+  name: -qrcode wrong input
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{bw_url}}/qrcode?qrcode=tes
+  body: none
+  auth: bearer
+}
+
+params:query {
+  qrcode: tes
+  ~headset_id: test
+}
+
+auth:bearer {
+  token: {{auth}}
+}
+
+tests {
+  test("status code is 404", function() {
+    expect(res.getStatus()).to.equal(404);
+  });
+  
+  test("Qrcode not found", function() {
+    expect(res.body.error).to.have.string('Qrcode not found')
+  });
+}

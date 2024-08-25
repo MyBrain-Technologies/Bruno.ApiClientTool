@@ -1,0 +1,45 @@
+meta {
+  name: -modalities valid
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{bw_url}}/modalities
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{auth}}
+}
+
+body:json {
+  {
+    "header": {
+      "version": "string",
+      "objects": 0,
+      "limit": 0,
+      "offset": 0,
+      "total": 0,
+      "versionMobile": "string"
+    },
+    "data": [
+      {
+        "timestamp": 1637080083873,
+        "label": "test"
+      }
+    ]
+  }
+}
+
+tests {
+  test("status code is 201", function() {
+    expect(res.getStatus()).to.equal(201);
+  });
+  
+  test("receive id", function() {
+    const jsonData = res.getBody();
+    expect(jsonData.data[0]).to.have.own.property('id');
+  });
+}

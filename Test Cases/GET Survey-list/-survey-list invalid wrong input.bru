@@ -1,0 +1,32 @@
+meta {
+  name: -survey-list invalid wrong input
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{bw_url}}/survey?survey_identifier=eva-emotion_valid&lang_code=en-EN
+  body: none
+  auth: bearer
+}
+
+params:query {
+  survey_identifier: eva-emotion_valid
+  lang_code: en-EN
+  ~survey_mode: pre-session
+  ~company: pmi
+}
+
+auth:bearer {
+  token: {{auth}}
+}
+
+tests {
+  test("status code is 500", function() {
+    expect(res.getStatus()).to.equal(500);
+  });
+  
+  test("can't find survey user language", function() {
+    expect(res.body.error).to.have.string('Can\'t find survey user language')
+  });
+}

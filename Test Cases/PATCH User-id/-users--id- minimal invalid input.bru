@@ -1,0 +1,54 @@
+meta {
+  name: -users--id- minimal invalid input
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{bw_url}}/users/55a55
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {{auth}}
+}
+
+body:json {
+  {
+      "header": {
+          "version": "1.0.0",
+          "objects": 1,
+          "limit": 1,
+          "offset": 0,
+          "total": 1
+      },
+      "data": [
+          {
+              "id": "",
+              "schemaName": "User_Stem",
+              "settings": {
+                  "language": "fr-FR",
+                  "soundEnabled": true,
+                  "voiceEnabled": true,
+                  "hasAcceptedContribution": true
+              }
+          }
+      ]
+  }
+  
+}
+
+tests {
+  test("status code is 500", function() {
+    expect(res.getStatus()).to.equal(500);
+  });
+  
+  test("invalid input", function() {
+      expect(res.body.error).to.contains('invalid input');
+  });
+}

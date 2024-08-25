@@ -1,0 +1,50 @@
+meta {
+  name: -sessions invalid input
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{bw_url}}/sessions
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {{auth}}
+}
+
+body:json {
+  {
+      "header": {
+          "version": "1.0.0",
+          "objects": 1,
+          "offset": 0,
+          "total": 1,
+          "limit": 1
+      },
+      "data": [
+          {
+              "duration": 60,
+              "exerciseType": "JOURNEY",
+              "goal": 0,
+              "programId": 122,
+              "programSessionIndex": 12
+          }
+      ]
+  }
+}
+
+tests {
+  test("status code is 400", function() {
+    expect(res.getStatus()).to.equal(400);
+  });
+  
+  test("invalid input", function() {
+    expect(res.body.error).to.contains('Invalid input');
+  });
+}

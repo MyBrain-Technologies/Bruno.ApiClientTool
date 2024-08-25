@@ -1,0 +1,33 @@
+meta {
+  name: -sessions all valid
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{bw_url}}/sessions?_sorted_by=startedAt&_limit=2&_skip=1&_sort_order=1
+  body: none
+  auth: bearer
+}
+
+params:query {
+  _sorted_by: startedAt
+  _limit: 2
+  _skip: 1
+  _sort_order: 1
+}
+
+auth:bearer {
+  token: {{auth}}
+}
+
+tests {
+  test("status code is 200", function() {
+    expect(res.getStatus()).to.equal(200);
+  });
+  
+  test("success", function() {
+    const jsonData = res.getBody();
+    expect(jsonData.data).to.have.lengthOf(1);
+  });
+}

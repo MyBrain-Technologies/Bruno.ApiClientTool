@@ -1,11 +1,11 @@
 meta {
-  name: -users--id- full no record
+  name: -users--id- full invalid input
   type: http
-  seq: 3
+  seq: 6
 }
 
 patch {
-  url: {{bw_url}}/users/55505
+  url: {{bw_url}}/users/55a55
   body: json
   auth: bearer
 }
@@ -52,11 +52,11 @@ body:json {
 }
 
 tests {
-  test("status code is 404", function() {
-    expect(res.getStatus()).to.equal(404);
+  test("status code is 500", function() {
+    expect(res.getStatus()).to.equal(500);
   });
   
-  test("no record found", function() {
-      expect(res.body.error).to.contains('No record');
+  test("invalid input", function() {
+      expect(res.body.error).to.contains('invalid input');
   });
 }

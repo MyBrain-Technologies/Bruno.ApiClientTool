@@ -1,0 +1,31 @@
+meta {
+  name: -qrcode valid
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{bw_url}}/qrcode?qrcode=test
+  body: none
+  auth: bearer
+}
+
+params:query {
+  qrcode: test
+  ~headset_id: test
+}
+
+auth:bearer {
+  token: {{auth}}
+}
+
+tests {
+  test("status code is 200", function() {
+    expect(res.getStatus()).to.equal(200);
+  });
+  
+  test("success", function() {
+    const jsonData = res.getBody();
+    expect(jsonData.data).to.deep.include({ "id": "499", "headsetId": "0123456789", "qrcode": "test"})
+  });
+}
