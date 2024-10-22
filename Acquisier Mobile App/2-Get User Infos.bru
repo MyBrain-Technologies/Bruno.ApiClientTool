@@ -1,0 +1,15 @@
+meta {
+  name: 2-Get User Infos
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{maestro_url}}/ilab/api/me/
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{maestro_token}}
+}

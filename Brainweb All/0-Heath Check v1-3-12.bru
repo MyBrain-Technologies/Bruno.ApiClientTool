@@ -1,0 +1,26 @@
+meta {
+  name: 0-Heath Check v1-3-12
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{brainweb_base_url}}{{brainweb_version}}/health
+  body: none
+  auth: none
+}
+
+script:pre-request {
+  bru.setVar("brainweb_version", "v1.3.12");
+}
+
+tests {
+  test("Successful Health check", function () {
+      expect(res.getStatus()).to.be.oneOf([200, 201, 202]);
+  });
+  
+  test("Server response contains the correct Brainweb patch version 1.3.12", function () {
+      var jsonData = res.getBody();
+      expect(jsonData.header.version).to.be.equal("1.3.12")
+  });
+}

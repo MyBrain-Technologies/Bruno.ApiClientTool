@@ -1,0 +1,41 @@
+meta {
+  name: 0c-Account Activation -WIP-
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{maestro_url}}/activate
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: 4eU7stAY5d5zg2PJo7zv3FLncp6Gh8qQhy3rBAbk
+}
+
+body:json {
+  {
+      "header": {
+          "limit": 20,
+          "objects": 1,
+          "offset": 0,
+          "total": 1,
+          "version": "v1.9.2",
+          "versionMobile": "140"
+      },
+      "data": [
+          {
+              "strategy": "local",
+              "email": "{{mm_email}}",
+              "activationCode": "validactivationcode"
+          }
+      ]
+  }
+}
+
+script:pre-request {
+  // reset global values
+  bru.setVar("mm_token", "");
+  
+}

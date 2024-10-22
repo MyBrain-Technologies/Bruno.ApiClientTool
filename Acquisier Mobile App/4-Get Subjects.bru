@@ -1,0 +1,22 @@
+meta {
+  name: 4-Get Subjects
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{maestro_url}}/ilab/api/protocol/{{protocol_id}}/subject
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{maestro_token}}
+}
+
+tests {
+  // assign result first item as subject id
+  var jsonData = res.getBody();
+  bru.setVar("subject_id", jsonData.results[0].id);
+  
+}

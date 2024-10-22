@@ -1,0 +1,19 @@
+meta {
+  name: 5c-Get All Programs
+  type: http
+  seq: 8
+}
+
+get {
+  url: {{bw_url}}/programs
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~_sort_order: 1
+}
+
+auth:bearer {
+  token: {{subject_token}}
+}

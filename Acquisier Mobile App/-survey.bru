@@ -1,0 +1,23 @@
+meta {
+  name: -survey
+  type: http
+  seq: 13
+}
+
+get {
+  url: {{bw_url}}/survey?survey_identifier=eva-activation
+  body: none
+  auth: bearer
+}
+
+params:query {
+  survey_identifier: eva-activation
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {{subject_token}}
+}

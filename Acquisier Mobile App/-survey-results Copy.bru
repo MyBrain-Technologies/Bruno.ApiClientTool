@@ -1,0 +1,249 @@
+meta {
+  name: -survey-results Copy
+  type: http
+  seq: 15
+}
+
+post {
+  url: {{bw_url}}/survey-results
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {{subject_token}}
+}
+
+body:json {
+  {
+      "header": {
+          "limit": 20,
+          "objects": 1,
+          "offset": 0,
+          "total": 1,
+          "version": "envelope"
+      },
+      "data": [
+          {
+          	"schemaName": "SurveyResult",
+              "id": "48255247-126a-4ac2-a1d4-b4a9f7cc0095",
+              "stype": "state",
+              "mode": "program",
+              "completedAt": 1552559043288,
+              "stai": {
+                  "afterSession": {
+                      "date": 1552559043288,
+                      "selfMeasures": [
+                          {
+                              "measureKeyword": "relaxationLevel",
+                              "value": 50
+                          },
+                          {
+                              "measureKeyword": "moodLevel",
+                              "value": 3
+                          }
+                      ],
+                      "staiResult": [
+                          {
+                              "answer": 4,
+                              "questionIndex": 0
+                          },
+                          {
+                              "answer": 1,
+                              "questionIndex": 1
+                          },
+                          {
+                              "answer": 2,
+                              "questionIndex": 2
+                          },
+                          {
+                              "answer": 3,
+                              "questionIndex": 3
+                          },
+                          {
+                              "answer": 1,
+                              "questionIndex": 4
+                          },
+                          {
+                              "answer": 4,
+                              "questionIndex": 5
+                          },
+                          {
+                              "answer": 2,
+                              "questionIndex": 6
+                          },
+                          {
+                              "answer": 3,
+                              "questionIndex": 7
+                          },
+                          {
+                              "answer": 1,
+                              "questionIndex": 8
+                          },
+                          {
+                              "answer": 2,
+                              "questionIndex": 9
+                          },
+                          {
+                              "answer": 4,
+                              "questionIndex": 10
+                          },
+                          {
+                              "answer": 3,
+                              "questionIndex": 11
+                          },
+                          {
+                              "answer": 1,
+                              "questionIndex": 12
+                          },
+                          {
+                              "answer": 2,
+                              "questionIndex": 13
+                          },
+                          {
+                              "answer": 3,
+                              "questionIndex": 14
+                          },
+                          {
+                              "answer": 4,
+                              "questionIndex": 15
+                          },
+                          {
+                              "answer": 1,
+                              "questionIndex": 16
+                          },
+                          {
+                              "answer": 2,
+                              "questionIndex": 17
+                          },
+                          {
+                              "answer": 3,
+                              "questionIndex": 18
+                          },
+                          {
+                              "answer": 1,
+                              "questionIndex": 19
+                          }
+                      ]
+                  },
+                  "beforeSession": {
+                      "date": 1552558762944,
+                      "selfMeasures": [
+                          {
+                              "measureKeyword": "sleepHour",
+                              "value": 2290
+                          },
+                          {
+                              "measureKeyword": "wakeupHour",
+                              "value": 300
+                          },
+                          {
+                              "measureKeyword": "sleepQuality",
+                              "value": 5
+                          },
+                          {
+                              "measureKeyword": "relaxationLevel",
+                              "value": 56
+                          },
+                          {
+                              "measureKeyword": "moodLevel",
+                              "value": 3
+                          }
+                      ],
+                      "staiResult": [
+                          {
+                              "answer": 4,
+                              "questionIndex": 0
+                          },
+                          {
+                              "answer": 2,
+                              "questionIndex": 1
+                          },
+                          {
+                              "answer": 3,
+                              "questionIndex": 2
+                          },
+                          {
+                              "answer": 1,
+                              "questionIndex": 3
+                          },
+                          {
+                              "answer": 4,
+                              "questionIndex": 4
+                          },
+                          {
+                              "answer": 2,
+                              "questionIndex": 5
+                          },
+                          {
+                              "answer": 3,
+                              "questionIndex": 6
+                          },
+                          {
+                              "answer": 1,
+                              "questionIndex": 7
+                          },
+                          {
+                              "answer": 4,
+                              "questionIndex": 8
+                          },
+                          {
+                              "answer": 2,
+                              "questionIndex": 9
+                          },
+                          {
+                              "answer": 3,
+                              "questionIndex": 10
+                          },
+                          {
+                              "answer": 1,
+                              "questionIndex": 11
+                          },
+                          {
+                              "answer": 3,
+                              "questionIndex": 12
+                          },
+                          {
+                              "answer": 2,
+                              "questionIndex": 13
+                          },
+                          {
+                              "answer": 4,
+                              "questionIndex": 14
+                          },
+                          {
+                              "answer": 1,
+                              "questionIndex": 15
+                          },
+                          {
+                              "answer": 3,
+                              "questionIndex": 16
+                          },
+                          {
+                              "answer": 2,
+                              "questionIndex": 17
+                          },
+                          {
+                              "answer": 4,
+                              "questionIndex": 18
+                          },
+                          {
+                              "answer": 2,
+                              "questionIndex": 19
+                          }
+                      ]
+                  },
+                  "selfMeasuresConfigId": "",
+                  "sessionId": "1469"
+              },
+              "context": {
+              	"ownerId": "1"
+          	}
+          }
+      ]
+  }
+}

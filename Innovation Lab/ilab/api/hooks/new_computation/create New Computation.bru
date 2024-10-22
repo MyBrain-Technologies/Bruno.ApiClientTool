@@ -1,0 +1,26 @@
+meta {
+  name: create New Computation
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/ilab/api/hooks/new_computation/
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "task": "<string>",
+    "key": [
+      "<integer>",
+      "<integer>"
+    ]
+  }
+}

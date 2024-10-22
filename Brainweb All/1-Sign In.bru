@@ -1,0 +1,42 @@
+meta {
+  name: 1-Sign In
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{brainweb_base_url}}{{brainweb_version}}/authentication
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "header": {
+          "version": "1.0.0",
+          "objects": 1,
+          "limit": 1,
+          "offset": 0,
+          "total": 1
+      },
+      "data": [
+          {
+              "strategy": "local",
+              "email": "{{mm_email}}",
+              "password": "{{mm_password}}"
+          }
+      ]
+  }
+}
+
+script:pre-request {
+  // reset global values
+  bru.setVar("mm_token", "");
+  
+}
+
+tests {
+  test("Successful login", function () {
+      expect(res.getStatus()).to.be.oneOf([200, 201, 202]);
+  });
+}

@@ -1,0 +1,20 @@
+meta {
+  name: list Protocols
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/ilab/api/protocol/?page=<integer>&page_size=<integer>
+  body: none
+  auth: none
+}
+
+params:query {
+  page: <integer>
+  page_size: <integer>
+}
+
+headers {
+  Accept: application/json
+}

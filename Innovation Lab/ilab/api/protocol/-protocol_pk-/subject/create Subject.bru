@@ -1,0 +1,30 @@
+meta {
+  name: create Subject
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/ilab/api/protocol/:protocol_pk/subject/
+  body: json
+  auth: none
+}
+
+params:path {
+  protocol_pk: <string>
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "group": "<string>",
+    "birthdate": "<date>",
+    "sex": "Male",
+    "location": "<string>",
+    "comments": "<string>"
+  }
+}

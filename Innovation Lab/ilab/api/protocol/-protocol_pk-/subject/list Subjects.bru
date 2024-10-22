@@ -1,0 +1,24 @@
+meta {
+  name: list Subjects
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/ilab/api/protocol/:protocol_pk/subject/?page=<integer>&page_size=<integer>
+  body: none
+  auth: none
+}
+
+params:query {
+  page: <integer>
+  page_size: <integer>
+}
+
+params:path {
+  protocol_pk: <string>
+}
+
+headers {
+  Accept: application/json
+}
