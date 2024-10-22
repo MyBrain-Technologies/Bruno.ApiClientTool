@@ -1,0 +1,39 @@
+meta {
+  name: 1-Login
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{maestro_url}}/ilab/api/token/
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "username": "{{ilab_user_email}}",
+      "password": "{{ilab_user_password}}"
+  }
+}
+
+script:pre-request {
+  // reset global values
+  bru.setVar("maestro_token", "");
+  bru.setVar("protocol_id", "");
+  bru.setVar("subject_id", "");
+  bru.setVar("subject_token", "");
+  
+  
+}
+
+tests {
+  test("Successful POST request", function () {
+      expect(res.getStatus()).to.be.oneOf([200, 201, 202]);
+  });
+  
+  // assign result to global Maestro token variable
+  var jsonData = res.getBody();
+  bru.setVar("maestro_token", jsonData.access);
+  
+}

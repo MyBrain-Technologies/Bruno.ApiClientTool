@@ -1,0 +1,15 @@
+meta {
+  name: destroy Protocol
+  type: http
+  seq: 4
+}
+
+delete {
+  url: {{baseUrl}}/ilab/api/protocol/:id/
+  body: none
+  auth: none
+}
+
+params:path {
+  id: <string>
+}

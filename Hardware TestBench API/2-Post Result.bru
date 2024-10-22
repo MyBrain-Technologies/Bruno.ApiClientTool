@@ -1,0 +1,23 @@
+meta {
+  name: 2-Post Result
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{url_server}}/testbench-reports?notification_enabled=1
+  body: json
+  auth: bearer
+}
+
+params:query {
+  notification_enabled: 1
+}
+
+auth:bearer {
+  token: W87VIydQQkhyXRdVMK9TgGugBClJV6QUsmEJR1CDidxOnpRgaP6nld7uSGcgvGUCVgYrtsuf2DHVIlveJMRiClnzBzk5ACgLzWPw9u1GmqtixFQQyBQcS6hkjuVbpgvNYJeTOanp9aeLSLaUiDz3Cz8ru0DipJFmtJzk7Elrdvu1KFgAZVaLB7VY1vUIsrN9YQWO8ClNZhHJ6PV6XmpjxYu8eORmDhhohaFIZ2XptBWvTnurjKyctYR0sPt65Trz
+}
+
+body:json {
+  {"_schemaName":"TestReport","cardId":"79:98:8A:F3:74:21","completeTestDuration":0,"date":"2024-07-03T04:28:24Z","deviceName":"melo_1010200865","externalIdentifier":"","firmwareVersion":"1.7.26","hardwareVersion":"1.0.0","id":"","isRework":false,"lotId":"","operatorName":"Tuan.ngothanhmg@gmail.com","serialNumber":"1010200865","success":false,"testLocation":"MBT","testResult":[{"duration":15379,"errors":["P3_CHANNEL_FAILED","P4_CHANNEL_FAILED","AF3_CHANNEL_FAILED","AF4_CHANNEL_FAILED"],"name":"TBS_EEG_TEST","parameters":{"SNR dBm 3_10":"NaN","Real Index3 - Computation index3_20":"0 - 163","SNR dBm 1_30":"7.7380786278477025","Real Index1 - Computation index1_10":"61 - 81","SNR dBm 2_40":"3.1200143494833377","Puissance bruit 4_40":"NaN","Puissance bruit 3_30":"NaN","Puissance bruit 2_20":"19.020697090982605","Puissance signal 1_40":"23.24364318077485","Puissance bruit 1_10":"27.476596702008482","Puissance signal 2_10":"30.946233405020543","Puissance signal 3_20":"NaN","SNR dBm 4_20":"NaN","Puissance signal 4_30":"NaN","2.8210332572054195_30":"2.8210332572054195","Real Index2 - Computation index2_40":"302 - 327","Real Index4 - Computation index4_10":"0 - 81","1.0_10":"1.0","4.204494554394501_10":"4.204494554394501","SNR dBm 2_10":"6.237137943238874","SNR dBm 1_40":"7.374129793186258","Real Index1 - Computation index1_20":"177 - 163","SNR dBm 3_20":"NaN","Puissance bruit 4_30":"NaN","Real Index3 - Computation index3_10":"0 - 81","3.3468006282075775_20":"3.3468006282075775","Puissance bruit 3_20":"NaN","Puissance bruit 1_40":"15.869513387588592","Puissance signal 3_10":"NaN","Puissance bruit 2_10":"24.70909546178167","Puissance signal 2_40":"19.973633647517275","SNR dBm 4_30":"NaN","Puissance signal 4_20":"NaN","Puissance signal 1_30":"25.24669820017424","Real Index4 - Computation index4_40":"0 - 327","1.0_40":"1.0","Real Index2 - Computation index2_10":"89 - 81","Real Index3 - Computation index3_40":"0 - 327","SNR dBm 1_10":"6.660278649721871","Real Index1 - Computation index1_30":"278 - 245","SNR dBm 2_20":"7.226697004397952","SNR dBm 3_30":"NaN","Puissance bruit 2_40":"16.853619298033937","Puissance bruit 4_20":"NaN","Puissance bruit 1_30":"17.508619572326538","Puissance signal 2_30":"21.440733902193145","Puissance bruit 3_10":"NaN","SNR dBm 4_40":"NaN","Puissance signal 1_20":"23.928456931151082","Puissance signal 4_10":"NaN","2.0511689560625226_40":"2.0511689560625226","Puissance signal 3_40":"NaN","Real Index4 - Computation index4_30":"0 - 245","Real Index2 - Computation index2_20":"169 - 163","1.0_30":"1.0","SNR dBm 1_20":"5.246298418324564","Real Index1 - Computation index1_40":"347 - 327","4.634766561256835_10":"4.634766561256835","SNR dBm 2_30":"4.50408206090021","Real Index3 - Computation index3_30":"0 - 245","Puissance bruit 3_40":"NaN","Puissance signal 1_10":"34.13687535173035","SNR dBm 3_40":"NaN","Puissance bruit 4_10":"NaN","Puissance bruit 2_30":"16.936651841292935","5.940292946135982_30":"5.940292946135982","Puissance bruit 1_20":"18.68215851282652","Puissance signal 3_30":"NaN","Puissance signal 2_20":"26.247394095380557","SNR dBm 4_10":"NaN","Puissance signal 4_40":"NaN","Real Index4 - Computation index4_20":"0 - 163","Real Index2 - Computation index2_30":"280 - 245","5.462770799976754_40":"5.462770799976754","1.0_20":"1.0","5.280434993150794_20":"5.280434993150794"},"startTimestamp":1719980940955,"success":false}],"udi":""}
+}

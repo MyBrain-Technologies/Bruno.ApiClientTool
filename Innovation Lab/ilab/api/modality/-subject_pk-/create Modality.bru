@@ -1,0 +1,30 @@
+meta {
+  name: create Modality
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/ilab/api/modality/:subject_pk/
+  body: json
+  auth: none
+}
+
+params:path {
+  subject_pk: <string>
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "label": "<string>",
+    "timestamp": "<integer>",
+    "metadata": {},
+    "computed_kpis": {},
+    "modality_raw": "<binary>"
+  }
+}

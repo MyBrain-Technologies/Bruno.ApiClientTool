@@ -1,0 +1,25 @@
+meta {
+  name: 0-Get Results-App-Not-Support-
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{url_server}}/testbench-reports?auth=fjZLQDcHBh2H5et6
+  body: none
+  auth: bearer
+}
+
+params:query {
+  auth: fjZLQDcHBh2H5et6
+  ~skip: 10306
+  ~limit: 30
+}
+
+headers {
+  ~auth: Bearer fjZLQDcHBh2H5et6
+}
+
+auth:bearer {
+  token: W87VIydQQkhyXRdVMK9TgGugBClJV6QUsmEJR1CDidxOnpRgaP6nld7uSGcgvGUCVgYrtsuf2DHVIlveJMRiClnzBzk5ACgLzWPw9u1GmqtixFQQyBQcS6hkjuVbpgvNYJeTOanp9aeLSLaUiDz3Cz8ru0DipJFmtJzk7Elrdvu1KFgAZVaLB7VY1vUIsrN9YQWO8ClNZhHJ6PV6XmpjxYu8eORmDhhohaFIZ2XptBWvTnurjKyctYR0sPt65Trz
+}

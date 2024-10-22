@@ -1,0 +1,23 @@
+meta {
+  name: 7-Session History
+  type: http
+  seq: 8
+}
+
+get {
+  url: {{url_bw_1_9}}/sessions-history?_sort_order=-1&_skip=0&_limit=20&level=0&phase=1
+  body: none
+  auth: bearer
+}
+
+params:query {
+  _sort_order: -1
+  _skip: 0
+  _limit: 20
+  level: 0
+  phase: 1
+}
+
+auth:bearer {
+  token: {{mm_token}}
+}

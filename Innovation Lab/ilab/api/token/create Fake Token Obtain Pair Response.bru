@@ -1,0 +1,23 @@
+meta {
+  name: create Fake Token Obtain Pair Response
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/ilab/api/token/
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "username": "<string>",
+    "password": "<string>"
+  }
+}

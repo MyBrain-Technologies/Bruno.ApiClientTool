@@ -1,0 +1,20 @@
+meta {
+  name: 10-Survey
+  type: http
+  seq: 11
+}
+
+get {
+  url: {{url_bw_1_9}}/survey?survey_identifier=stai-trait&lang_code=en-EN
+  body: none
+  auth: bearer
+}
+
+params:query {
+  survey_identifier: stai-trait
+  lang_code: en-EN
+}
+
+auth:bearer {
+  token: {{mm_token}}
+}

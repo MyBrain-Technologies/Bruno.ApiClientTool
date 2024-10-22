@@ -1,0 +1,19 @@
+meta {
+  name: 1-Get Serial Number
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{url_server}}/max-serial-number?serial_prefix=00000
+  body: none
+  auth: bearer
+}
+
+params:query {
+  serial_prefix: 00000
+}
+
+auth:bearer {
+  token: W87VIydQQkhyXRdVMK9TgGugBClJV6QUsmEJR1CDidxOnpRgaP6nld7uSGcgvGUCVgYrtsuf2DHVIlveJMRiClnzBzk5ACgLzWPw9u1GmqtixFQQyBQcS6hkjuVbpgvNYJeTOanp9aeLSLaUiDz3Cz8ru0DipJFmtJzk7Elrdvu1KFgAZVaLB7VY1vUIsrN9YQWO8ClNZhHJ6PV6XmpjxYu8eORmDhhohaFIZ2XptBWvTnurjKyctYR0sPt65Trz
+}

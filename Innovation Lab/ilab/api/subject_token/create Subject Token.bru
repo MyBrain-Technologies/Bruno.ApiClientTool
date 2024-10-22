@@ -1,0 +1,22 @@
+meta {
+  name: create Subject Token
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/ilab/api/subject_token/
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "subject_id": "<integer>"
+  }
+}

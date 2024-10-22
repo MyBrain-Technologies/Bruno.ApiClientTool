@@ -1,0 +1,21 @@
+meta {
+  name: 5a-Get Surveys
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{bw_url}}/survey?survey_identifier=eva-emotion&lang_code=fr-FR
+  body: none
+  auth: bearer
+}
+
+params:query {
+  survey_identifier: eva-emotion
+  lang_code: fr-FR
+  ~survey_identifier: {{survey_identifier}}
+}
+
+auth:bearer {
+  token: {{subject_token}}
+}

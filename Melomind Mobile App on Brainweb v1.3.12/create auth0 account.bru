@@ -1,0 +1,30 @@
+meta {
+  name: create auth0 account
+  type: http
+  seq: 13
+}
+
+post {
+  url: https://dev-mybraintech.eu.auth0.com/dbconnections/signup
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{mm_token}}
+}
+
+body:json {
+  {
+    "client_id": "L87HgKr3MYMR7d6hu5k3rk0lfL4HwXPl",
+    "email": "annonigluca@gmail.com",
+    "password": "12345678a@A",
+    "connection": "dev-melomind-db",
+    "username": "annoni gianluca",
+    "first_name": "Gianluca",
+    "last_name": "Annoni",
+    "name": "John Doe",
+    "user_metadata": {    "age": "32",
+    "gender": "Male" }
+  }
+}

@@ -1,0 +1,26 @@
+meta {
+  name: 5-Get Subject Token
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{maestro_url}}/ilab/api/subject_token/
+  body: multipartForm
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{maestro_token}}
+}
+
+body:multipart-form {
+  subject_id: {{subject_id}}
+}
+
+tests {
+  // assign result as subject token
+  var jsonData = res.getBody();
+  bru.setVar("subject_token", jsonData.access);
+  
+}

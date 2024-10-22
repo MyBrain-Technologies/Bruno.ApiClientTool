@@ -1,0 +1,20 @@
+meta {
+  name: retrieve Modality Raw
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/ilab/api/modality-raw/:subject_pk/:modality_pk/
+  body: none
+  auth: none
+}
+
+params:path {
+  subject_pk: <string>
+  modality_pk: <string>
+}
+
+headers {
+  Accept: application/json
+}

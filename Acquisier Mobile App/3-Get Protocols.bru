@@ -1,0 +1,22 @@
+meta {
+  name: 3-Get Protocols
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{maestro_url}}/ilab/api/protocol/
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{maestro_token}}
+}
+
+tests {
+  // assign result first item as protocol id
+  var jsonData = res.getBody();
+  bru.setVar("protocol_id", jsonData.results[0].id);
+  
+}

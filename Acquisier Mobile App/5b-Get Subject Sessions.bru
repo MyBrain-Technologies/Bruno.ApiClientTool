@@ -1,0 +1,21 @@
+meta {
+  name: 5b-Get Subject Sessions
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{bw_url}}/sessions?completed=true
+  body: none
+  auth: bearer
+}
+
+params:query {
+  completed: true
+  ~_sort_order: 1
+  ~aborted: false
+}
+
+auth:bearer {
+  token: {{subject_token}}
+}

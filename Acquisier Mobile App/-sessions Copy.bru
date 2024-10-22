@@ -1,0 +1,44 @@
+meta {
+  name: -sessions Copy
+  type: http
+  seq: 11
+}
+
+post {
+  url: {{bw_url}}/sessions
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {{subject_token}}
+}
+
+body:json {
+  {
+      "header": {
+          "version": "1.0.0",
+          "objects": 1,
+          "offset": 0,
+          "total": 1,
+          "limit": 1
+      },
+      "data": [
+          {
+          	"id": "",
+  			"schemaName": "Session_Seed",
+  			"startedAt": 1514904806147,
+  			"exerciseType": "JOURNEY",
+  			"goal": 0,
+  			"duration": 0,
+  			"sessionType": 3,
+              "programId": 21
+  		}
+      ]
+  }
+  
+}

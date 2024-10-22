@@ -1,0 +1,19 @@
+meta {
+  name: retrieve Protocol
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/ilab/api/protocol/:id/
+  body: none
+  auth: none
+}
+
+params:path {
+  id: <string>
+}
+
+headers {
+  Accept: application/json
+}

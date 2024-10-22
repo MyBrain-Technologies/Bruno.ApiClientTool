@@ -1,0 +1,15 @@
+meta {
+  name: -users--id-
+  type: http
+  seq: 9
+}
+
+get {
+  url: {{bw_url}}/users/
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{subject_token}}
+}

@@ -1,0 +1,46 @@
+meta {
+  name: 3-Sign In
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{url_bw_1_3_12}}/authentication
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "header": {
+          "version": "1.0.0",
+          "objects": 1,
+          "limit": 1,
+          "offset": 0,
+          "total": 1
+      },
+      "data": [
+          {
+              "strategy": "local",
+              "email": "{{mm_email}}",
+              "password": "{{mm_password}}"
+          }
+      ]
+  }
+}
+
+script:pre-request {
+  // reset global values
+  bru.setVar("mm_token", "");
+  
+}
+
+tests {
+  test("Successful POST request", function () {
+      expect(res.getStatus()).to.be.oneOf([200, 201, 202]);
+  });
+  
+  // assign result to global Melomind token variable
+  var jsonData = res.getBody();
+  bru.setVar("mm_token", jsonData.data[0].accessToken);
+}

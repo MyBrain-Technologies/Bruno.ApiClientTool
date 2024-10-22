@@ -1,0 +1,19 @@
+meta {
+  name: -sessions--id- Copy
+  type: http
+  seq: 12
+}
+
+get {
+  url: {{bw_url}}/sessions
+  body: none
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {{subject_token}}
+}

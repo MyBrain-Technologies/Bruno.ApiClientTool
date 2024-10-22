@@ -1,0 +1,30 @@
+meta {
+  name: partial Update Modality Partial
+  type: http
+  seq: 2
+}
+
+patch {
+  url: {{baseUrl}}/ilab/api/modality/:subject_pk/:modality_pk/
+  body: json
+  auth: none
+}
+
+params:path {
+  subject_pk: <string>
+  modality_pk: <string>
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "label": "<string>",
+    "timestamp": "<integer>",
+    "metadata": {},
+    "computed_kpis": {}
+  }
+}

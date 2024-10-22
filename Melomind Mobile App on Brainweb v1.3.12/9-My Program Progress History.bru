@@ -1,0 +1,20 @@
+meta {
+  name: 9-My Program Progress History
+  type: http
+  seq: 10
+}
+
+get {
+  url: {{url_bw_1_3_12}}/melomind-analysis/my-program/progress-history?start_date=1709226000000&end_date=1717174799999
+  body: none
+  auth: bearer
+}
+
+params:query {
+  start_date: 1709226000000
+  end_date: 1717174799999
+}
+
+auth:bearer {
+  token: {{mm_token}}
+}
