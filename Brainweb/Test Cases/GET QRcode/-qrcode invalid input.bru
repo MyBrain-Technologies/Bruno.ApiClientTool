@@ -5,13 +5,12 @@ meta {
 }
 
 get {
-  url: {{bw_url}}/qrcode?qr=test
+  url: {{bw_url}}/qrcode?
   body: none
   auth: bearer
 }
 
 params:query {
-  qr: test
   ~headset_id: test
 }
 
@@ -25,6 +24,6 @@ tests {
   });
   
   test("invalid input", function() {
-    expect(res.body.error).to.have.string('Invalid input')
+    expect(res.body.error).to.have.string('Cannot send blank request')
   });
 }

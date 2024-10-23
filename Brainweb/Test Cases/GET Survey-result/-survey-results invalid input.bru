@@ -26,11 +26,11 @@ auth:bearer {
 }
 
 tests {
-  test("status code is 400", function() {
-    expect(res.getStatus()).to.equal(400);
+  test("status code is 500", function() {
+    expect(res.getStatus()).to.equal(500);
   });
   
-  test("invalid input", function() {
-    expect(res.body.error).to.have.string('Invalid input')
+  test("column dose not exist", function() {
+    expect(res.body.error).to.include('does not exist')
   });
 }

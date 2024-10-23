@@ -57,6 +57,6 @@ tests {
   });
   
   test("invalid input", function() {
-      expect(res.body.error).to.contains('invalid input');
+      expect(res.body.error).to.include('invalid input');
   });
 }
