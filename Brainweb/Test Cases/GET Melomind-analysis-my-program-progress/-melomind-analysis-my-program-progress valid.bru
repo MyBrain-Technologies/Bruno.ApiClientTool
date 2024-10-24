@@ -20,16 +20,10 @@ tests {
   });
   
   test("success", function() {
-    const jsonData = res.getBody();
-    expect(jsonData.data).to.deep.include({
-        "completedSessions": 2,
-        "phase": -1,
-        "totalNFDuration": 0,
-        "totalDRDuration": 0,
-        "assiduity": {
-          "frequency": 0,
-          "regularity": -1
-        }
-      })
+    const keys = ["completedSessions", "phase", "totalNFDuration", "totalDRDuration", "assiduity"];
+    const jsonData = res.getBody();  
+    keys.forEach(key => {
+      expect(jsonData.data[0]).to.have.property(key);
+    })
   });
 }

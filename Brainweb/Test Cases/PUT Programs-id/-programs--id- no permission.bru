@@ -84,6 +84,6 @@ tests {
   });
   
   test("no permission", function() {
-      expect(res.body.error)
+      expect(res.body.error).to.be.a('string')
   });
 }

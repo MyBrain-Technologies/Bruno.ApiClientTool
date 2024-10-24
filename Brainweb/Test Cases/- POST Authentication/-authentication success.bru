@@ -33,6 +33,11 @@ body:json {
   }
 }
 
+script:post-response {
+  var jsonData = res.getBody();
+  bru.setEnvVar("auth", jsonData["data"][0]?.accessToken);
+}
+
 tests {
   test("status code is 201", function() {
     expect(res.getStatus()).to.equal(201);
